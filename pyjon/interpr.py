@@ -1337,6 +1337,11 @@ class String(JS_Function):
             return str_(args[0])
         return str_("")
 
+    @publicmethod
+    def fromCharCode(self, *args):
+        """Converts Unicode values into characters."""
+        return ''.join(map(unichr, [int(i) for i in args]))
+
 # = = = = = = = = = = = = = = = 
 #           boolean
 # = = = = = = = = = = = = = = = 
