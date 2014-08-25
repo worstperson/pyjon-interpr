@@ -1693,7 +1693,8 @@ class regexp_proto(Prototype):
             self.regexp = re.compile(kwargs['regexp'], self.flags)
 
     def __getattr__(self, k):
-        if k == 'constructor': return regexp
+        if k == 'source': return self.regexp.pattern
+        elif k == 'constructor': return regexp
         elif k == '__proto__': return regexp_prototype
         else: return prototype.__getattr__(self, k)
 
