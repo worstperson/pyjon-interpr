@@ -1208,6 +1208,14 @@ class string_proto(str, Prototype):
         return ord(s[index:index+1])
 
     @publicmethod
+    def concat(self, *args):
+        """Combines the text of two strings and returns a new string."""
+        s = str_(self)
+        for i in args:
+            s = s + str_(i)
+        return s
+
+    @publicmethod
     def slice(self, start=None, end=None):
         """Extracts a section of a string and returns a new string."""
         s = str_(self)
