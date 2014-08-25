@@ -1216,6 +1216,12 @@ class string_proto(str, Prototype):
         return s
 
     @publicmethod
+    def indexOf(self, searchvalue, start=0):
+        """Returns the index within the calling String object of the first occurrence of the specified value, or -1 if not found."""
+        s = str_(self)
+        return s.find(str_(searchvalue), start)
+
+    @publicmethod
     def slice(self, start=None, end=None):
         """Extracts a section of a string and returns a new string."""
         s = str_(self)
