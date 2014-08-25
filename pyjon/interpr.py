@@ -592,12 +592,11 @@ class JS_Context(object):
 
             elif t == DECREMENT: 
                 x = self.get_(n[0])
-                self.assign(n[0], x+1)
+                self.assign(n[0], self.assignOp(x, 1, MINUS))
                 return x
 
             elif t == INCREMENT:
                 x = self.get_(n[0])
-                y = 1
                 self.assign(n[0], self.assignOp(x, 1, PLUS))
                 return x
 
