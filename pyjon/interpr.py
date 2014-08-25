@@ -1219,13 +1219,23 @@ class string_proto(str, Prototype):
     def indexOf(self, searchvalue, start=0):
         """Returns the index within the calling String object of the first occurrence of the specified value, or -1 if not found."""
         s = str_(self)
-        return s.find(str_(searchvalue), start)
+        return s.find(searchvalue, start)
 
     @publicmethod
     def lastIndexOf(self, searchvalue, start=0):
         """Returns the index within the calling String object of the last occurrence of the specified value, or -1 if not found."""
         s = str_(self)
-        return s.rfind(str_(searchvalue), start)
+        return s.rfind(searchvalue, start)
+
+    @publicmethod
+    def localeCompare(self, compareString):
+        """Returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order."""
+        s = str_(self)
+        if s < compareString:
+            return -1
+        elif s > compareString:
+            return 1
+        return 0
 
     @publicmethod
     def slice(self, start=None, end=None):
