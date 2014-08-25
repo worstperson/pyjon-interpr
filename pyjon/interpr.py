@@ -1215,6 +1215,8 @@ class string_proto(str, Prototype):
     @publicmethod
     def split(this, sep=None):
         """Splits a String object into an array of strings by separating the string into substrings."""
+        if sep == '':
+            return Array(*list(str(this)))
         return Array(*str(this).split(sep))
 
     @publicmethod
