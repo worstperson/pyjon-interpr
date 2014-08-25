@@ -1197,6 +1197,12 @@ class string_proto(str, Prototype):
     toString = publicmethod(lambda this: str(this))
 
     @publicmethod
+    def charCodeAt(self, index):
+        """Returns a number indicating the Unicode value of the character at the given index."""
+        s = str_(self)
+        return ord(s[index:index+1])
+
+    @publicmethod
     def slice(self, start=None, end=None):
         """Extracts a section of a string and returns a new string."""
         s = str_(self)
