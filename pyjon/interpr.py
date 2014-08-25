@@ -1197,6 +1197,21 @@ class string_proto(str, Prototype):
     toString = publicmethod(lambda this: str(this))
 
     @publicmethod
+    def substring(self, start=None, end=None):
+        """Returns the characters from a string, between two specified indices, and returns the new sub string."""
+        s = str_(self)
+        if start == None and end == None: return s
+        else:
+            if start == None: start = 0
+            else: start = toNumber(start)
+            if end == None: end = len(s) 
+            else: end = toNumber(end)
+            if end < 0: return ''
+            if start > 0 and end < 0 and end != None: return ''
+            if end > len(s): end = len(s)
+            return s[start:end]
+
+    @publicmethod
     def substr(self, start=None, n=None):
         """Returns the characters in a string beginning at the specified location through the specified number of characters."""
         #print "substr()", self, start, n
