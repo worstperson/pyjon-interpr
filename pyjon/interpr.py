@@ -1197,6 +1197,12 @@ class string_proto(str, Prototype):
     toString = publicmethod(lambda this: str(this))
 
     @publicmethod
+    def charAt(self, index):
+        """Returns the character at the specified index."""
+        s = str_(self)
+        return s[index:index+1]
+
+    @publicmethod
     def charCodeAt(self, index):
         """Returns a number indicating the Unicode value of the character at the given index."""
         s = str_(self)
