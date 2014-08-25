@@ -79,8 +79,8 @@ for op, token in defs.opTypeNames :
         node["op"] = op
 
 # FIXME Python internals: +/-inf, nan etc..
-def parseInt(x):
-    return int(x, 0)
+def parseInt(x, y=0):
+    return int(str(x), y)
 
 def parseFloat(x):
     return float(x)

@@ -1813,7 +1813,7 @@ class PyJS(JS_Context):
         # Hidden read-only global objects
         self.js_objects = dict(
             # global methods
-            parseInt = lambda this, x: lexer.parseInt(x),
+            parseInt = lambda this, x, y=0: lexer.parseInt(x, y),
             parseFloat = lambda this, x: lexer.parseFloat(x),
             isNaN = lambda this, x: isNaN(toNumber(x)),
 
