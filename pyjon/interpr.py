@@ -1490,6 +1490,10 @@ class Array(list, Prototype):
             i += 1
         return string_proto(s.join(l))
 
+    @publicmethod
+    def reverse(this):
+        return Array(*[a for b, a in this][::-1])
+
     __iter__ = lambda self: array_iter(self)
     """
     if id(self.__proto__) == id(self):
