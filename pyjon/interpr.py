@@ -1706,7 +1706,7 @@ class RegExp(JS_Function):
     def __init__(self):
         JS_Function.__init__(self)
 
-    def __newInstance__(self, this, regexp={}, modifiers=None):
+    def __newInstance__(this, regexp={}, modifiers=None):
         return regexp_proto(regexp=regexp, modifiers=modifiers)
 
     def __call__(self, this, *args):
